@@ -30,21 +30,21 @@ namespace botvs.script.upload
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)] // Info on this package for Help/About
+    [InstalledProductRegistration("#1110", "#1112", "1.0", IconResourceID = 2400)] // Info on this package for Help/About
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid(Command1Package.PackageGuidString)]
+    [Guid(AutoUploadPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    public sealed class Command1Package : Package
+    public sealed class AutoUploadPackage : Package
     {
         /// <summary>
-        /// Command1Package GUID string.
+        /// AutoUploadPackage GUID string.
         /// </summary>
-        public const string PackageGuidString = "54a5321d-ba0a-4907-804d-22c30a53018e";
+        public const string PackageGuidString = "2eff5776-67dc-4e00-8968-5b0f160626b4";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Command1"/> class.
+        /// Initializes a new instance of the <see cref="AutoUpload"/> class.
         /// </summary>
-        public Command1Package()
+        public AutoUploadPackage()
         {
             // Inside this method you can place any initialization code that does not require
             // any Visual Studio service because at this point the package object is created but
@@ -60,7 +60,7 @@ namespace botvs.script.upload
         /// </summary>
         protected override void Initialize()
         {
-            Command1.Initialize(this);
+            AutoUpload.Initialize(this);
             base.Initialize();
         }
 

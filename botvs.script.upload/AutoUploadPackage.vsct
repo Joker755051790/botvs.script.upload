@@ -22,7 +22,7 @@
 
   <!--The Commands section is where commands, menus, and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="guidCommand1Package">
+  <Commands package="guidAutoUploadPackage">
     <!-- Inside this section we have different sub-sections: one for the menus, another
     for the menu groups, one for the buttons (the actual commands), one for the combos
     and the last one for the bitmaps used. Each element is identified by a command id that
@@ -36,7 +36,7 @@
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
     <Groups>
-      <Group guid="guidCommand1PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="guidAutoUploadPackageCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
     </Groups>
@@ -52,11 +52,11 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidCommand1PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
-        <Parent guid="guidCommand1PackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidImages" id="bmpPic1" />
+      <Button guid="guidAutoUploadPackageCmdSet" id="AutoUploadId" priority="0x0100" type="Button">
+        <Parent guid="guidAutoUploadPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages" id="pic1" />
         <Strings>
-          <ButtonText>Invoke Command1</ButtonText>
+          <ButtonText>Upload script to Botvs</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -68,27 +68,27 @@
             bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
-      <Bitmap guid="guidImages" href="Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+      <Bitmap guid="guidImages" href="Resources\icon.ico" usedList="pic1"/>
     </Bitmaps>
   </Commands>
 
+  <!-- for more key info : https://msdn.microsoft.com/en-us/library/dd375731(VS.85).aspx -->
+  <KeyBindings>
+    <KeyBinding guid="guidAutoUploadPackageCmdSet" id="AutoUploadId" key1="VK_OEM_3" mod1="CONTROL" editor="guidVSStd97" />
+  </KeyBindings>
+  
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="guidCommand1Package" value="{54a5321d-ba0a-4907-804d-22c30a53018e}" />
+    <GuidSymbol name="guidAutoUploadPackage" value="{2eff5776-67dc-4e00-8968-5b0f160626b4}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidCommand1PackageCmdSet" value="{73d230fa-72f6-4450-8732-e750abba5f5e}">
+    <GuidSymbol name="guidAutoUploadPackageCmdSet" value="{bd8696ea-10fb-4d1d-8c08-f688200c22c7}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="Command1Id" value="0x0100" />
+      <IDSymbol name="AutoUploadId" value="0x0100" />
     </GuidSymbol>
 
-    <GuidSymbol name="guidImages" value="{cc7be32b-da1f-4147-b6f1-a54b39f60ccc}" >
-      <IDSymbol name="bmpPic1" value="1" />
-      <IDSymbol name="bmpPic2" value="2" />
-      <IDSymbol name="bmpPicSearch" value="3" />
-      <IDSymbol name="bmpPicX" value="4" />
-      <IDSymbol name="bmpPicArrows" value="5" />
-      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    <GuidSymbol name="guidImages" value="{548a1960-f0d6-47e9-ba80-0599519f0c97}" >
+      <IDSymbol name="pic1" value="1" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
