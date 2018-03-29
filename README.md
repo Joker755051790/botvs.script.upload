@@ -1,5 +1,6 @@
 # botvs.script.upload
 Extension for vs2017, auto upload script files to botvs server
 
-# Release Notes
-[botvs.script.upload-v0.1](https://github.com/j9kkk/botvs.script.upload/blob/master/Release/botvs.script.upload-v0.1.vsix)
+# How to use
+* open and edit your script
+* use <code>ctrl</code> + <code>`</code> to upload your script to botvs server
